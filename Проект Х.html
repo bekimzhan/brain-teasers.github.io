@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Подготовка к ЕНТ с Biobrain</title>
+  <style>
+    :root {
+      --primary-red: hsla(140, 39%, 45%, 0.63);
+      --primary-green: #00ff00;
+      --primary-blue: #4dd2ff;
+      --white: #ffffff;
+      --dark: hsl(0, 0%, 0%);
+      --accent: #00c3ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #004d80;
+      color: var(--dark);
+    }
+
+    header {
+        background: linear-gradient(to bottom, #004d80, #004d80);
+      padding: 120px 20px;
+      text-align: center;
+      color: var(--white);
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to bottom, #445d75, #004d80);
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: var(--accent);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: var(--white);
+      padding: 16px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--primary-green);
+      color: var(--dark);
+      border-radius: 10px;
+      transform: scale(1.1);
+    }
+
+    .banner {
+        background: linear-gradient(to bottom, #445d75, #004d80);
+      padding: 150px 20px;
+      text-align: center;
+      color: var(--white);
+      font-size: 36px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .banner::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner-content button {
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      background: var(--primary-green);
+      color: var(--dark);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .banner-content button:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: var(--primary-red);
+    }
+
+    .about p {
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .why ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .why li {
+      background: var(--white);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-size: 18px;
+      flex: 1 1 220px;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+
+    .course {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .course:hover {
+      transform: translateY(-10px);
+    }
+
+    .course img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .course p {
+      padding: 20px;
+      font-size: 18px;
+    }
+
+    .reviews-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .review {
+      background: var(--white);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px
+rgba(0,0,0,0.15);
+      flex: 1 1 300px;
+      font-size: 18px;
+    }
+
+    .contacts p {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--primary-green);
+      color: var(--dark);
+      font-size: 18px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .why ul, .reviews-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .banner {
+        font-size: 24px;
+      }
+      nav a {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+    
+<header>
+  <h1>Подготовка к ЕНТ с BioBrain.S</h1>
+  <p>Твой путь к успеху начинается здесь!</p>
+</header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #03609e; /* Цвет фона */
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Тень под навигацией */
+      z-index: 1000; /* Чтобы меню было выше других элементов */
+    }
+
+    nav a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 60px; /* Чтобы контент не ушёл под навигацию */
+      font-family: sans-serif;
+    }
+  </style>
+
+<nav>
+  <a href="#home">Главная</a>
+  <a href="#about">О нас</a>
+  <a href="#why">Почему мы</a>
+  <a href="#reviews">Отзывы</a>
+  <a href="#courses">Курсы</a>
+  <a href="#contacts">Контакты</a>
+</nav>
+
+<div class="banner" id="home">
+  <div class="banner-content">
+    Достигай целей вместе с нами!
+    <br>
+    <button>Записаться сейчас</button>
+  </div>
+</div>
+
+<main>
+
+    <section id="about" class="about">
+        <h2>О нас</h2>
+        <p>
+          Мы — команда профессионалов, которые помогут вам подготовиться к ЕНТ на высшем уровне.
+          Индивидуальный подход, современные методики и постоянная поддержка — вот наш рецепт успеха!
+        </p>
+      </section>
+      
+      <style>
+        .about {
+          background: linear-gradient(to right, #445d75, #004d80); /* Плавный градиент слева направо */
+          color: white;
+          padding: 60px 30px;
+          text-align: center;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Тень для глубины */
+          animation: fadeIn 2s ease-out; /* Анимация появления */
+        }
+      
+        .about h2 {
+          font-size: 42px;
+          margin-bottom: 20px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+      
+        .about p {
+          font-size: 20px;
+          line-height: 1.8;
+          max-width: 850px;
+          margin: 0 auto;
+        }
+      
+        @keyframes fadeIn {
+          0% { opacity: 0; transform: translateY(30px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+      </style>
+      
+      
+      <section id="why" class="why">
+        <h2>Почему выбирают нас?</h2>
+        <ul>
+          <li>
+            <strong>1. Опыт и профессионализм:</strong><br>
+            Наша команда — это преподаватели с многолетним опытом, которые знают все тонкости подготовки к ЕНТ.
+            Мы не просто объясняем материал — мы учим думать, понимать и применять знания на практике.
+          </li>
+          <li>
+            <strong>2. Индивидуальный подход:</strong><br>
+            Мы понимаем, что каждый ученик уникален. Поэтому подбираем стратегию обучения с учетом уровня знаний, целей и предпочтений ученика.
+          </li>
+          <li>
+            <strong>3. Прозрачность и честность:</strong><br>
+            Вы заранее знаете стоимость, длительность и этапы подготовки. Мы не даем пустых обещаний — только реальный план и результаты.
+          </li>
+          <li>
+            <strong>4. Высокое качество и ответственность:</strong><br>
+            Мы гордимся качеством подготовки. Контроль прогресса, регулярные тестирования и обратная связь позволяют достигать стабильных результатов.
+          </li>
+          <li>
+            <strong>5. Гибкие условия сотрудничества:</strong><br>
+            Онлайн и офлайн занятия, разные форматы и графики — мы подстраиваемся под вас, а не наоборот.
+          </li>
+        </ul>
+      </section>
+       
+      <section id="courses" class="courses">
+        <h2>Чтоб начать курс, выберите один из этих курсов</h2>
+        <div class="courses-grid">
+          <a href="math.html" class="course">
+            <img src="https://cdn.pixabay.com/photo/2018/01/04/17/07/math-3068841_960_720.jpg" alt="Алгебра">
+            <p>Алгебра</p>
+          </a>                            
+          <a href="physics.html" class="course">
+            <img src="https://soyuzmash.ru/upload/iblock/ac4/ac49bf3af819c461500677ab18d7a934.jpeg" alt="Физика">
+            <p>Физика</p>
+          </a>
+          <a href="chemistry.html" class="course">
+            <img src="https://kokoro.com.ua/wp-content/uploads/2023/12/Navishcho-nam-khimiia-i-iak-u-nij-rozibratysia.jpg" alt="Химия">
+            <p>Химия</p>
+          </a>
+          <a href="biology.html" class="course">
+            <img src="https://api.buki-kz.com/news_image/R4/R6/R4R65uVz0oWPZREWWK7hnU4LSjLTQrSjq4nIDbqN.jpg" alt="Биология">
+            <p>Биология</p>
+          </a>
+        </div>
+      </section>
+      
+      <style>
+        .courses {
+          padding: 60px 30px;
+          text-align: center;
+          background: #f4f4f4;
+        }
+      
+        .courses h2 {
+          font-size: 36px;
+          margin-bottom: 40px;
+          color: #333;
+        }
+      
+        .courses-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+          max-width: 1200px; /* Ограничиваем ширину */
+          margin: 0 auto; /* Центрируем контейнер */
+        }
+      
+        .course {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background: white;
+          border-radius: 0;
+          overflow: hidden;
+          aspect-ratio: 1 / 1; /* Делает блок квадратным */
+          text-decoration: none;
+          color: #222;
+        }
+      
+        .course img {
+          width: 100%;
+          height: 70%;
+          object-fit: cover;
+        }
+      
+        .course p {
+          margin: 0;
+          padding: 10px;
+          font-size: 18px;
+          font-weight: bold;
+          background-color: #eaeaea;
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      
+        @media (max-width: 600px) {
+          .courses h2 {
+            font-size: 28px;
+          }
+      
+          .course p {
+            font-size: 16px;
+          }
+        }
+      </style>
+      
+      <style>
+        .courses {
+          background: linear-gradient(to right, #445d75, #004d80); /* Градиентный фон */
+          color: white;
+          padding: 60px 30px;
+          text-align: center;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          animation: fadeIn 2s ease-out;
+          max-width: 1200px;
+          margin: auto;
+        }
+      
+        .courses h2 {
+          font-size: 42px;
+          margin-bottom: 30px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 600;
+          color: #00ff00; /* Цвет текста заголовка — зеленый */
+        }
+      
+        .courses-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr); /* 4 равные колонки */
+          gap: 20px; /* Небольшой отступ между карточками */
+          justify-items: center;
+        }
+      
+        .course {
+          background: rgba(0, 0, 0, 0.6); /* Темный фон для карточки */
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+          text-align: center;
+          transition: transform 0.3s ease, background 0.3s ease;
+          position: relative;
+          height: 320px; /* Одинаковая высота для всех карточек */
+          width: 260px; /* Ширина карточки */
+        }
+      
+        .course:hover {
+          transform: translateY(-10px); /* Эффект подъема */
+          background: rgba(0, 0, 0, 0.8); /* Темнее фон при наведении */
+        }
+      
+        .course img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover; /* Подгоняем изображение по размеру карточки */
+        }
+      
+        .course p {
+          padding: 15px;
+          font-size: 20px;
+          color: white;
+          background: rgba(0, 0, 0, 0.5);
+          margin: 0;
+        }
+      
+        @keyframes fadeIn {
+          0% { opacity: 0; transform: translateY(30px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+      
+        @media (max-width: 768px) {
+          .courses h2 {
+            font-size: 32px;
+          }
+          
+          .courses-grid {
+            grid-template-columns: 1fr 1fr; /* На мобильных устройствах будет 2 колонки */
+          }
+      
+          .course p {
+            font-size: 16px;
+          }
+        }
+      </style>
+      
+  <script>
+    // Скрипт для подсветки активной вкладки (если надо для текущей страницы)
+    const courses = document.querySelectorAll('.course');
+
+    // Проверяем текущий URL и активируем правильную вкладку
+    courses.forEach(course => {
+      if (window.location.href.indexOf(course.getAttribute('href')) !== -1) {
+        course.classList.add('active');
+      }
+    });
+
+  </script>
+
+.
+
+
+
+
+
+      <style>
+
+        .why {
+          background: linear-gradient(to right, #445d75, #004d80); /* Градиент от темно-синего к голубому */
+          color: white;
+          padding: 60px 30px;
+          border-radius: 20px;
+          box-shadow: 0 12px 35px rgba(53, 35, 129, 0.253); /* Тень для глубины */
+          text-align: center;
+          animation: fadeInUp 2s ease-out;
+
+}
+      
+        .why h2 {
+          font-size: 36px;
+          margin-bottom: 30px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: #00ff00; /* Акцентный цвет заголовка */
+          animation: slideIn 1.5s ease-out;
+        }
+      
+        .why ul {
+          list-style: none;
+          padding: 0;
+        }
+      
+        .why li {
+          font-size: 18px;
+          margin-bottom: 20px;
+          padding: 15px;
+          background: rgba(0, 0, 0, 0.6);
+          border-radius: 10px;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+          transition: transform 0.3s ease, background 0.3s ease;
+        }
+      
+        .why li:hover {
+          transform: translateY(-5px); /* Эффект подъема при наведении */
+          background: rgba(0, 0, 0, 0.8); /* Более темный фон при наведении */
+        }
+      
+        .why li strong {
+          color: #00ff00; /* Цвет для акцентированных частей текста */
+        }
+      
+        @keyframes fadeInUp {
+          0% { opacity: 0; transform: translateY(30px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+      
+        @keyframes slideIn {
+          0% { opacity: 0; transform: translateX(-50px); }
+          100% { opacity: 1; transform: translateX(0); }
+        }
+      </style>
+      
+      <section id="reviews" class="reviews">
+        <h2>Отзывы</h2>
+      
+        <div class="reviews-container" id="reviews-list">
+          <div class="review">
+            <strong>Алия:</strong><br>"Я набрала 125 баллов! Курсы отличные, преподаватели отзывчивые. Очень довольна!"<br>
+            <div class="rating">⭐⭐⭐⭐☆</div>
+          </div>
+          <div class="review">
+            <strong>Нурсултан:</strong><br>"Атмосфера была невероятной, обучение доступное и интересное! Очень помогли в подготовке."<br>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+          </div>
+          <div class="review">
+            <strong>Диана:</strong><br>"Очень помогли с разбором сложных тем. Благодарю за терпение и поддержку!"<br>
+            <div class="rating">⭐⭐⭐⭐☆</div>
+          </div>
+        </div>
+      
+        <!-- Форма добавления отзыва -->
+        <form id="review-form" class="review-form">
+          <h3>Оставить отзыв</h3>
+          <input type="text" id="name" placeholder="Ваше имя" required>
+          <textarea id="message" placeholder="Ваш отзыв" required></textarea>
+          <label>Оценка:
+            <select id="rating">
+              <option value="5">⭐⭐⭐⭐⭐</option>
+              <option value="4">⭐⭐⭐⭐☆</option>
+              <option value="3">⭐⭐⭐☆☆</option>
+              <option value="2">⭐⭐☆☆☆</option>
+              <option value="1">⭐☆☆☆☆</option>
+            </select>
+          </label>
+          <button type="submit">Отправить</button>
+        </form>
+      </section>
+      
+      <style>
+        .reviews {
+          background: linear-gradient(to right, #445d75, #004d80);
+          color: white;
+          padding: 60px 30px;
+          text-align: center;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          animation: fadeIn 2s ease-out;
+          max-width: 1200px;
+          margin: auto;
+        }
+      
+        .reviews h2 {
+          font-size: 42px;
+          margin-bottom: 30px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 600;
+          color: #00ff00;
+        }
+      
+        .reviews-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 30px;
+        }
+      
+        .review {
+          background: rgba(0, 0, 0, 0.6);
+          padding: 20px;
+          border-radius: 15px;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+          font-size: 18px;
+          max-width: 350px;
+          flex: 1 1 300px;
+          transition: transform 0.3s ease, background 0.3s ease;
+        }
+      
+        .review:hover {
+          transform: translateY(-5px);
+          background: rgba(0, 0, 0, 0.8);
+        }
+      
+        .review strong {
+          color: #00ff00;
+        }
+      
+        .rating {
+          font-size: 20px;
+          color: #ffcc00;
+          margin-top: 10px;
+        }
+      
+        .review-form {
+          margin-top: 40px;
+          background: rgba(255, 255, 255, 0.1);
+          padding: 20px;
+          border-radius: 15px;
+          max-width: 500px;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: left;
+          color: white;
+        }
+      
+        .review-form h3 {
+          text-align: center;
+          margin-bottom: 15px;
+        }
+      
+        .review-form input,
+        .review-form textarea,
+        .review-form select {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+        }
+      
+        .review-form button {
+          width: 100%;
+          padding: 12px;
+          background-color: #00ff00;
+          color: #000;
+          border: none;
+          border-radius: 8px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background 0.3s ease;
+        }
+      
+        .review-form button:hover {
+          background-color: #00cc00;
+        }
+      
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      
+        @media (max-width: 768px) {
+          .reviews h2 {
+            font-size: 32px;
+          }
+      
+          .reviews-container {
+            flex-direction: column;
+            align-items: center;
+          }
+      
+          .review {
+            font-size: 16px;
+            max-width: 90%;
+          }
+        }
+      </style>
+      
+      <script>
+        document.getElementById("review-form").addEventListener("submit", function(e) {
+          e.preventDefault();
+      
+          const name = document.getElementById("name").value.trim();
+          const message = document.getElementById("message").value.trim();
+          const ratingValue = document.getElementById("rating").value;
+      
+          const stars = "⭐".repeat(ratingValue) + "☆".repeat(5 - ratingValue);
+      
+          const newReview = document.createElement("div");
+          newReview.classList.add("review");
+          newReview.innerHTML = 
+          document.getElementById("reviews-list").appendChild(newReview);
+      
+          document.getElementById("review-form").reset();
+        });
+      </script>
+     
+</html>
+<section id="consultation" class="consultation">
+    <div class="consultation-content">
+      <div class="contact-details">
+        <h2>Свяжитесь с нами</h2>
+        <p><strong>📍 Адрес:</strong> г. Астана, ул. Толе Би, 57ф</p>
+        <p><strong>📞 Телефон:</strong> <a href="tel:+77712935976">+7 771 293 59 76</a></p>
+        <p><strong>📧 Email:</strong> <a href="mailto:haggivaggi561@gmail.com">haggivaggi561@gmail.com</a></p>
+        <a class="call-now" href="tel:+77712935976">📞 Позвонить</a>
+      </div>
+  
+      <div class="form-area">
+        <h2>Бесплатная консультация</h2>
+        <p>Обсудите с менеджером ваши цели и уровень знаний, чтобы подобрать подходящий курс подготовки</p>
+        <form class="consultation-form">
+          <input type="text" placeholder="Имя" required>
+          <input type="tel" placeholder="Телефон" required>
+          <input type="email" placeholder="Email" required>
+          <button type="submit">Записаться</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .consultation {
+      background: linear-gradient(to right, #445d75, #004d80);
+      color: white;
+      padding: 60px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      max-width: 1100px;
+      margin: 40px auto;
+      animation: fadeIn 2s ease-out;
+    }
+  
+    .consultation-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  
+    .contact-details,
+    .form-area {
+      flex: 1 1 450px;
+      min-width: 300px;
+    }
+  
+    .contact-details h2,
+    .form-area h2 {
+      color: #00ff00;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+  
+    .contact-details p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+  
+    .contact-details a {
+      color: #ffffff;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+  
+    .contact-details a:hover {
+      color: #00ff00;
+    }
+  
+    .call-now {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 16px;
+      background-color: #00ff00;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+  
+    .call-now:hover {
+      background-color: #00cc00;
+    }
+  
+    .form-area p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  
+    .consultation-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .consultation-form input {
+      padding: 12px 20px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      width: 100%;
+    }
+  
+    .consultation-form button {
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #00ff00;
+      color: #000;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+  
+    .consultation-form button:hover {
+      background-color: #00cc00;
+    }
+  
+    @media (max-width: 768px) {
+      .consultation-content {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .contact-details, .form-area {
+        text-align: center;
+      }
+  
+      .contact-details h2, .form-area h2 {
+        font-size: 24px;
+      }
+  
+      .contact-details p, .form-area p {
+        font-size: 16px;
+      }
+    }
+  
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  
+</main>
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>О компании</h3>
+        <ul>
+          <li><a href="#">О нас</a></li>
+          <li><a href="#">Преимущества</a></li>
+          <li><a href="#">Цены</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Подготовка</h3>
+        <ul>
+          <li><a href="#">Подготовка к ЕНТ</a></li>
+          <li><a href="#">Репетиторы</a></li>
+          <li><a href="#">Курсы английского языка</a></li>
+          <li><a href="#">Подготовка к НИШ</a></li>
+          <li><a href="#">КТЛ / БИЛ</a></li>
+          <li><a href="#">РФМШ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Полезное</h3>
+        <ul>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Блог</a></li>
+          <li><a href="#">Пробный ЕНТ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Контакты</h3>
+        <p><strong>Телефон:</strong> <a href="tel:+77066230218">+7 775 293 59 76</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@erudit.kz">haggivaggi561@gmail.com</a></p>
+        <p><strong>Мессенджеры:</strong></p>
+        <ul class="messengers">
+          <p><a href="#">WhatsApp</a></p>
+          <p><a href="#">Telegram</a></p>
+        </ul>
+        <p><a href="#">Начать преподавать</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2023 - 2025 . BioBrain. Все права защищены.
+    </div>
+  </footer>
+  
+  <style>
+    .footer {
+      background: linear-gradient(to right, #445d75, #004d80);
+      color: white;
+      padding: 50px 20px 20px;
+      font-family: 'Arial', sans-serif;
+    }
+  
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+      gap: 30px;
+    }
+  
+    .footer-column {
+      flex: 1 1 220px;
+      min-width: 200px;
+    }
+  
+    .footer-column h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      color: #00ff00;
+    }
+  
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+  
+    .footer-column ul li {
+      margin-bottom: 8px;
+    }
+  
+    .footer-column a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+  
+    .footer-column a:hover {
+      color: #00ff00;
+    }
+  
+    .footer-column p {
+      margin: 8px 0;
+    }
+  
+    .messengers {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-left: 0;
+    }
+  
+    .footer-bottom {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 15px;
+    }
+  
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-column {
+        width: 100%;
+      }
+    }
+  </style>
+  
+
+
+</body>
+</html>
